@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming ٩(๑•̀o•́๑)و </title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    {% block title %}
+    <div class="title"> <!-- 타이틀부분 -->
+        <h1> coming </h1>
+    </div>
+    {% endblock title %}
+
+    {% block content %}
+    <div class="bottom">  <!-- 타이틀 아랫부분 -->
+        <div class = "profile">
+            <div class = "prof photo"><img src="zz.jpg" id="mypic"></div>  <!-- 사진보여지는부분 -->
+            <div class = "prof line">------------------------</div>
+            <div class = "prof category"><a href="{% url '모아보기로연결' %}">모아보기</a></div>
+            <div class = "prof line">------------------------</div>
+            <div class = "prof category"><a href="{% url '사이트로연결' %}">냉장보관</a></div>
+            <div class = "prof category">냉동보관</div>
+            <div class = "prof category">상온보관</div>
+            <div class = "prof line">------------------------</div>
+            <div class = "prof category">파우치</div>
+            <div class = "prof category">약통</div>
+            <div class = "prof line">------------------------</div>
+            <div class = "prof category">요기</div>
+            <div class = "prof category">조기</div>
+
+            <div class="newcategory">  <!--새로운 카테고리추가-->
+                <a href="{% url '카테고리추가로 연결되게' %}">NEW<br>CATEGORY</a>
+            </div>
+
+        </div>
+<!-- 여기까지  템플릿 상속 -->
+    {% endblock content %}
+
+        <!-- 모아보기 페이지 -->
+        <!-- 다른 카테고리에서는 물건들은 달라도 보여지는 형식은 똑같이 -->
+        <div class = "allshow page">
+            <div class = "box">물건1</div>
+            <div class = "box">물건2</div>
+            <div class = "box">물건3</div>
+
+
+
+
+
+
+            <div class="create">  <!--새로운 제품추가하는 버튼-->
+                <a href="{% url 'newitem' %}">NEW<br>ITEM</a>
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>
