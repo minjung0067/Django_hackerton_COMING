@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming ٩(๑•̀o•́๑)و </title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="title"> <!-- 타이틀부분 -->
+        <h1> coming </h1>
+    </div>
+
+    <div class="bottom">  <!-- 타이틀 아랫부분 -->
+        <div class = "profile">
+            <div class = "prof photo"><img src="zz.jpg" id="mypic"></div>  <!-- 사진보여지는부분 -->
+            <div class = "prof line">------------------------</div>
+            <div class = "prof category"><a href="{% url '모아보기로연결' %}">모아보기</a></div>
+            <div class = "prof line">------------------------</div>
+            <div class = "prof category"><a href="{% url '사이트로연결' %}">냉장보관</a></div>
+            <div class = "prof category">냉동보관</div>
+            <div class = "prof category">상온보관</div>
+            <div class = "prof line">------------------------</div>
+            <div class = "prof category">파우치</div>
+            <div class = "prof category">약통</div>
+            <div class = "prof line">------------------------</div>
+            <div class = "prof category">요기</div>
+            <div class = "prof category">조기</div>
+
+            <div class="newcategory">  <!--새로운 제품추가-->
+                <a href="{% url '카테고리추가로 연결되게' %}">NEW<br>CATEGORY</a>
+            </div>
+
+        </div>
+<!-- 여기까지  템플릿 상속 -->
+        
+
+        <div class = "newitem page">
+<!-- 아직 모델이 없어서 위치 선정하기가 넘 애매하길래 일단은 그냥 세로로 보여지게 했어용 -->
+            <h1> 상품 추가하기 ~ </h1>   
+            <img src="zz.jpg" style="width: 200px; height: 200px; margin: 30px;">
+
+            <p> 이름</p>
+            <textarea cols="20" rows="1"  name ="name"></textarea>
+            <p> 수량  </p>
+            <textarea cols="5" rows="1" name="about"></textarea>
+            <p> 구매날짜 </p>
+            <textarea cols="20" rows="1" name="about"></textarea>
+            <p> 유통기한 </p>
+            <textarea cols="20" rows="1" name="about"></textarea>
+            <p> 보관위치 </p>
+            <textarea cols="20" rows="2" name="about"></textarea>
+
+            <input type="submit" value="Add" name = "submit" >
+
+
+        </div>
+
+    </div>
+    
+    
+
+</body>
+</html>
