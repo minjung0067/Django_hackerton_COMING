@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page</title>
+    <style>
+       html, body {
+    height: 100%;
+    background-color : rgba(238, 250, 253, 0.897);
+    font-family : "여기어때 잘난체 OTF";
+    text-align : center;
+} 
+    </style>
+</head>
+<body>
+    <from method ="POST" action ="#">
+        {% csrf_token %}
+        <h1> 로그인하기 </h1>
+        <div>
+            <h2>ID_이름</h2>
+            <input name ="username" type ="text" required>
+            <h2>PW_비밀번호</h2>
+            <input name ="password" type ="password" required>
+        </div>
+        <button type="submit"> 
+            로그인
+            
+            </button>
+            <a href ="{% url 'main' %}">main page둘러보기</a>
+    </from>
+</body>
+</html>

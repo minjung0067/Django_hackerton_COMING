@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 page</title>
+    <style>
+        html, body {
+    height: 100%;
+    background-color : rgba(238, 250, 253, 0.897);
+    font-family : "여기어때 잘난체 OTF";
+    text-align : center;
+}
+    </style>
+</head>
+<body>
+    <form method ="POST" action ="#">
+        {% csrf_token %}
+        <h1>회원가입 하기</h1>
+        <div>
+            <h2>ID_이름 : <input name ="username" type ="text" required></h2>
+
+            <h2>PW_비밀번호 : <input name ="password1" type ="password" required id ="pw_1"></h2>
+
+            <h2>PW_비밀번호 확인 : <input name ="password2" type ="password" required id ="pw_2"></h2>
+        </div>
+        <Br>
+            <button type="submit">가입 하기</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/home.css">
+    <title>HOME</title>
+    
+</head>
+<body>
+    
+        <h1>🕐COMING🕞</h1>
+        {% if user.is_authenticated %}
+        {% csrf_token %}
+        <h1>COMING에 오신 것을 환영합니다.</h1>
+        {% endif %}
+      
+    
+        <div class = "wrap">
+            <button class ="button">
+                <a href ="{% url 'loginhome' %}">login</a>
+            </div>
+        </div>
+        <div class = "wrap">
+            <button class ="button">
+                <a href ="{% url 'signuphome' %}">회원가입</a>
+            </div>
+        </div>    
+        <div class = "wrap">      
+            <button class ="button">
+             <a href ="{% url 'logout' %}">logout</a>
+            </div>
+        </div>
+    
+</body>
+</html>

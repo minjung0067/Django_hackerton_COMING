@@ -19,3 +19,4 @@ class new(models.Model):
 class category(models.Model):
     objects = models.Manager()
     name = models.CharField(max_length=15,default="이름")
+
