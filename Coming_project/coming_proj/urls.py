@@ -3,7 +3,6 @@ from django.contrib import admin
 from django.urls import path
 from app0 import views
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
 
@@ -12,7 +11,6 @@ urlpatterns = [
     path('loginhome/',views.loginhome,name='loginhome'),
     path('signuphome/',views.signuphome, name='signuphome'),
     path('logout/',views.logout, name='logout'),
-    path('newitem/',views.newitem, name="newitem"),
-    path('newitem/<int:detail_id>',views.newitem, name="newitem"),
+    path('newitem/', views.newitem, name ='newitem'),
     
 ]

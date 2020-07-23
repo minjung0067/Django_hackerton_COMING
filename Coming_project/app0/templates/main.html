@@ -46,12 +46,22 @@
         <!-- 모아보기 페이지 -->
         <!-- 다른 카테고리에서는 물건들은 달라도 보여지는 형식은 똑같이 -->
         <div class = "allshow page">
-            <div class = "box">물건1</div>
-            <div class = "box">물건2</div>
-            <div class = "box">물건3</div>
+            {% for i in main_key.all %}
 
+            <div class = "box">
+                <a href="#">
+                    <img style="width: 100px; height:100px;  " src="{{i.img.url}}" />
+                    <p>이름 : {{i.name}}</p>
+                    <p>수량 : {{i.amount}}</p>
+                    <p>구매 날짜: {{i.date}}</p>
+                    <p>유통 기한 : {{i.exp}}</p>
+                    <p>보관 장소 :{{i.plc}}</p>     
+                </a>           
+        
+            </div>
 
-
+            {% endfor %}
+                
 
 
 

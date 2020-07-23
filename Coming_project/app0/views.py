@@ -1,8 +1,11 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect, get_object_or_404
 from django.http import HttpResponse
 from django.contrib.auth.models import User
-from .models import item,new,category
+from .models import item,category
+from django.urls import reverse
+from .forms import createForm
 from django.contrib import auth
+import os
 
 
 def main(request):
@@ -10,8 +13,21 @@ def main(request):
     return render(request,'main.html',{"main_key":Item})
 
 def newitem(request):
-    New = new.objects
-    return render(request,'newitem.html',{"new_key":New})
+    form = createForm()
+    if request.method == "POST":
+        new_val = item()
+        new_val.img = request.FILES['img']
+        new_val.name = request.POST['name']
+        new_val.amount = request.POST['amount']
+        new_val.date = request.POST['date']
+        new_val.exp = request.POST['exp']
+        new_val.plc = request.POST['plc']
+        new_val.save()
+        return redirect(reverse('main'))
+    else:
+        pass
+    return render(request, 'newitem.html',{'form':form})
+
 def home(request):
     return render(request,'home.html')
 
