@@ -46,21 +46,22 @@
         
         <div class = "newitem page">
 <!-- 아직 모델이 없어서 위치 선정하기가 넘 애매하길래 일단은 그냥 세로로 보여지게 했어용 -->
-            <h1> 상품 추가하기 ~ </h1>   
-            <img src="../static/zz.jpg" style="width: 200px; height: 200px; margin: 30px;">
-
-            <p> 이름</p>
-            <textarea cols="20" rows="1"  name ="name"></textarea>
+        <form action="{% url 'newitem' %}" enctype="multipart/form-data" method ="POST">
+            {% csrf_token %}
+            <p> 사진</p>
+            {{form.img}}
+            <p> 이름 </p>
+            <textarea cols="30" rows="1"  name ="name"></textarea>
             <p> 수량  </p>
-            <textarea cols="5" rows="1" name="about"></textarea>
-            <p> 구매날짜 </p>
-            <textarea cols="20" rows="1" name="about"></textarea>
+            <textarea cols="40" rows="6" name="amount"></textarea>
+            <p> 구매날짜  </p>
+            <textarea cols="40" rows="6" name="date"></textarea>
             <p> 유통기한 </p>
-            <textarea cols="20" rows="1" name="about"></textarea>
-            <p> 보관위치 </p>
-            <textarea cols="20" rows="2" name="about"></textarea>
-
+            <textarea cols="40" rows="6" name="exp"></textarea>
+            <p> 보관장소 </p>
+            <textarea cols="30" rows="1"  name ="plc"></textarea>
             <input type="submit" value="Add" name = "submit" >
+        </form>
 
 
         </div>
