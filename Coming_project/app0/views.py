@@ -63,8 +63,8 @@ def signup(request):
 def logout(request):
     auth.logout(request)
     return redirect('home')
+
 # def category(request):
 #     Cate = category.objects
 #     return render(request,'')
 
-# Create your views here.
