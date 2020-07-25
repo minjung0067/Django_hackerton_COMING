@@ -57,13 +57,16 @@
             <p> 이름 </p>
             <textarea cols="30" rows="1"  name ="name"></textarea>
             <p> 수량  </p>
-            <textarea cols="40" rows="6" name="amount"></textarea>
+            <input type="number" value="amount">
+            <!-- number타입은 길이 조절 불가 -->
             <p> 구매날짜  </p>
-            <textarea cols="40" rows="6" name="date"></textarea>
+            <input type="date" value="date">
             <p> 유통기한 </p>
-            <textarea cols="40" rows="6" name="exp"></textarea>
+            <input type="datetime-local" value="exp">
             <p> 보관장소 </p>
-            <textarea cols="30" rows="1"  name ="plc"></textarea>
+            <select>
+                <option value=1> 데이터 불러야댐 </option> 
+            </select>
             <input type="submit" value="Add" name = "submit" >
         </form>
         </div>
