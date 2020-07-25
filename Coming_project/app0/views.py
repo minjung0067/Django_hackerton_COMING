@@ -9,7 +9,7 @@ import os
 
 
 def main(request):
-    Item = item.objects
+    Item = item.objects.all()
     return render(request,'main.html',{"main_key":Item})
 
 def newitem(request):
