@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect, get_object_or_404
 from django.http import HttpResponse
 from django.contrib.auth.models import User
-from .models import item,category
+from .models import item,category,User
 from django.urls import reverse
 from .forms import createForm
 from django.contrib import auth
@@ -63,8 +63,4 @@ def signup(request):
 def logout(request):
     auth.logout(request)
     return redirect('home')
-# def category(request):
-#     Cate = category.objects
-#     return render(request,'')
 
-# Create your views here.
