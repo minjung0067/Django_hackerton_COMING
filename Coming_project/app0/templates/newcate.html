@@ -35,9 +35,7 @@
             <div class = "prof category">요기</div>
             <div class = "prof category">조기</div>
 
-            <div class="newcategory">  <!--새로운 제품추가-->
-                <a>NEW<br>CATEGORY</a>
-            </div>
+            
 
         </div>
 <!-- 여기까지  템플릿 상속 -->
@@ -48,7 +46,7 @@
 <!-- 아직 모델이 없어서 위치 선정하기가 넘 애매하길래 일단은 그냥 세로로 보여지게 했어용 -->
         <form action="{% url 'newitem' %}" enctype="multipart/form-data" method ="POST">
             {% csrf_token %}
-            <p> 보관장소 </p>
+            <p> 보관장소 추가하기! </p>
             <textarea cols="30" rows="1"  name ="plc"></textarea>
             <input type="submit" value="Add" name = "submit" >
         </form>

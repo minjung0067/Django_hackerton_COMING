@@ -28,6 +28,11 @@ def newitem(request):
         pass
     return render(request, 'newitem.html',{'form':form})
 
+def newcate(request):
+    cate = category.objects
+    return render(request, 'newcate.html',{'cate':cate})
+
+
 def home(request):
     return render(request,'home.html')
 
@@ -64,7 +69,4 @@ def logout(request):
     auth.logout(request)
     return redirect('home')
 
-# def category(request):
-#     Cate = category.objects
-#     return render(request,'')
 
