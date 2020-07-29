@@ -14,4 +14,3 @@ class UserAdmin(admin.ModelAdmin):
 
 admin.site.register(category,categoryAdmin)
 admin.site.register(item,itemAdmin)
-admin.site.register(User,UserAdmin)

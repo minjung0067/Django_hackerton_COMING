@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect, get_object_or_404
 from django.http import HttpResponse
 from django.contrib.auth.models import User
-from .models import item,category,User
+from .models import item,category
 from django.urls import reverse
 from .forms import createForm
 from django.contrib import auth
@@ -9,7 +9,7 @@ import os
 
 
 def main(request):
-    Item = item.objects
+    Item = item.objects.all()
     return render(request,'main.html',{"main_key":Item})
 
 def newitem(request):
@@ -27,6 +27,11 @@ def newitem(request):
     else:
         pass
     return render(request, 'newitem.html',{'form':form})
+
+def newcate(request):
+    cate = category.objects
+    return render(request, 'newcate.html',{'cate':cate})
+
 
 def home(request):
     return render(request,'home.html')
@@ -63,4 +68,3 @@ def signup(request):
 def logout(request):
     auth.logout(request)
     return redirect('home')
-
