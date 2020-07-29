@@ -38,9 +38,7 @@
             <div class = "prof category">요기</div>
             <div class = "prof category">조기</div>
             <!--새로운 카테고리추가-->
-            <div class="newcategory">  
-                <a href="{% url 'newcate' %}">NEW<br>CATEGORY</a>
-            </div>
+           
         </div>
 <!-- 여기까지  템플릿 상속 -->
     {% endblock content %}
@@ -65,6 +63,18 @@
             <div class="create">  
                 <a href="{% url 'newitem' %}">
                     NEW<br>ITEM</a>
+            </div>
+        </div>
+    </div>
+    <div class ="later">
+        <div class="newcategory">  
+            <a href="{% url 'newcate' %}">NEW<br>CATEGORY</a>
+        </div>
+        <div class="ad">
+            <div style="text-align:center;">
+                ` <a href="https://likelion.net/">
+                        <img src = "../static/1.png" width ="60%" height="150px" align-items="center">
+                    </a>
             </div>
         </div>
     </div>

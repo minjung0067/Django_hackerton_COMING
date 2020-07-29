@@ -26,14 +26,13 @@ SECRET_KEY = 'pbo#e@&q%pah2boa4fj=3*t(^j^^+#jta)s9o*nvj6ayf8p$6@'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    ".ap-northeast-2.compute.amazonaws.com"
+    # ".ap-northeast-2.compute.amazonaws.com"
 ]
 
 
 # Application definition
 
-INSTALLED_APPS = [
-    'django.contrib.admin',
+INSTALLED_APPS = [   'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
