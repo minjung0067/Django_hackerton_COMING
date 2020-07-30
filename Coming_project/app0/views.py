@@ -19,6 +19,8 @@ def detail(request,detail_id):
 
 def newitem(request):
     form = createForm()
+    placeobject = category.objects.all()
+
     if request.method == "POST":
         new_val = item()
         new_val.img = request.FILES['img']
@@ -31,7 +33,13 @@ def newitem(request):
         return redirect(reverse('main'))
     else:
         pass
-    return render(request, 'newitem.html',{'form':form})
+    return render(request, 'newitem.html',{'form':form, 'placeobject':placeobject})
+
+
+def newcate(request):
+    cate = category.objects
+    return render(request, 'newcate.html',{'cate':cate})
+
 
 def newcate(request):
     cate = category.objects
@@ -72,6 +80,10 @@ def signup(request):
 
 def logout(request):
     auth.logout(request)
+<<<<<<< HEAD
+    return redirect('home')
+=======
     return redirect('home')
 
 
+>>>>>>> master
