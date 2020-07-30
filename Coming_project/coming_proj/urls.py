@@ -15,9 +15,4 @@ urlpatterns = [
     path('newitem/', views.newitem, name ='newitem'),
     path('newcate/',views.newcate, name = 'newcate'),
     path('detail/<int:detail_id>',views.detail, name='detail'),
-    
-]
-
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
