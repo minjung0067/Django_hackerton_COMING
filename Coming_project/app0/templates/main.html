@@ -9,22 +9,25 @@
 </head>
 <body>
     {% block title %}
-    <div class="title"> <!-- 타이틀부분 -->
-        <h1> coming </h1>
+    <!-- 타이틀부분 -->
+    <div class="title"> 
+        <h1> <a href="{% url 'main' %}">coming</a> </h1>
     </div>
     {% endblock title %}
 
     {% block content %}
-    <div class="bottom">  <!-- 타이틀 아랫부분 -->
+    <div class="bottom">  
+        <!-- 프로필 -->
         <div class = "profile">
             <div class = "prof photo"><img src="../static/zz.jpg" id="mypic"></div>  <!-- 사진보여지는부분 -->
+            <!-- 메뉴 -->
             <div class = "prof line">------------------------</div>
             <div class = "prof category">
-                <!-- 모아보기 연결 -->
+                <a>모아보기</a>
             </div>
             <div class = "prof line">------------------------</div>
             <div class = "prof category">
-                <!-- 사이트 연결 -->
+                <a>냉장보관</a>
             </div>
             <div class = "prof category">냉동보관</div>
             <div class = "prof category">상온보관</div>
@@ -34,11 +37,10 @@
             <div class = "prof line">------------------------</div>
             <div class = "prof category">요기</div>
             <div class = "prof category">조기</div>
-
-            <div class="newcategory">  <!--새로운 카테고리추가-->
-                <a>NEW<br>CATEGORY</a>
+            <!--새로운 카테고리추가-->
+            <div class="newcategory">  
+                <a href="{% url 'newcate' %}">NEW<br>CATEGORY</a>
             </div>
-
         </div>
 <!-- 여기까지  템플릿 상속 -->
     {% endblock content %}
@@ -47,30 +49,22 @@
         <!-- 다른 카테고리에서는 물건들은 달라도 보여지는 형식은 똑같이 -->
         <div class = "allshow page">
             {% for i in main_key.all %}
-
             <div class = "box">
-                <a href="#">
+                <a href="{% url 'detail' i.id %}">
                     <img style="width: 100px; height:100px;  " src="{{i.img.url}}" />
                     <p>이름 : {{i.name}}</p>
-                    <p>수량 : {{i.amount}}</p>
-                    <p>구매 날짜: {{i.date}}</p>
                     <p>유통 기한 : {{i.exp}}</p>
-                    <p>보관 장소 :{{i.plc}}</p>     
+                    <p>보관 장소 :{{i.plc.Plc}}</p>     
                 </a>           
-        
             </div>
-
             {% endfor %}
-                
 
-
-
-            <div class="create">  <!--새로운 제품추가하는 버튼-->
-                <a href="{% url 'newitem' %}">NEW<br>ITEM</a>
+            <!--새로운 제품추가하는 버튼-->
+            <div class="create">  
+                <a href="{% url 'newitem' %}">
+                    NEW<br>ITEM</a>
             </div>
         </div>
-
     </div>
-    
 </body>
 </html>

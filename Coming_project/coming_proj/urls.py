@@ -13,6 +13,10 @@ urlpatterns = [
     path('logout/',views.logout, name='logout'),
     path('newitem/', views.newitem, name ='newitem'),
     path('newcate/',views.newcate, name = 'newcate'),
+<<<<<<< HEAD
+=======
+    path('detail/<int:detail_id>',views.detail, name='detail'),
+>>>>>>> master
     
 ]
 
