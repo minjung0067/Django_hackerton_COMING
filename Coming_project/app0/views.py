@@ -21,7 +21,7 @@ def newitem(request):
     form = createForm()
     if request.method == "POST":
         new_val = item()
-        new_val.img = request.FILES['Img']
+        new_val.img = request.FILES['img']
         new_val.name = request.POST['Name']
         new_val.amount = request.POST['Amount']
         new_val.date = request.POST['Date']
