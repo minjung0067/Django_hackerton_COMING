@@ -36,7 +36,7 @@ html, body {
     }
     .button:hover {
         background-color: rgb(116, 217, 248);
-        box-shadow: 0px 15px 20px rgba(37, 204, 182, 0.4));
+        box-shadow: 0px 15px 20px rgba(37, 204, 182, 0.4);
         color: #fff;
         transform: translateY(-7px);
       }
