@@ -14,6 +14,8 @@ def main(request):
 
 def newitem(request):
     form = createForm()
+    placeobject = category.objects.all()
+
     if request.method == "POST":
         new_val = item()
         new_val.img = request.FILES['img']
@@ -26,7 +28,8 @@ def newitem(request):
         return redirect(reverse('main'))
     else:
         pass
-    return render(request, 'newitem.html',{'form':form})
+    return render(request, 'newitem.html',{'form':form, 'placeobject':placeobject})
+
 
 def newcate(request):
     cate = category.objects

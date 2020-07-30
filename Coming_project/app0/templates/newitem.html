@@ -65,7 +65,11 @@
             <input type="datetime-local" value="exp">
             <p> 보관장소 </p>
             <select>
-                <option value=1> 데이터 불러야댐 </option> 
+                {% for place in placeobject %}
+                    <option value="{{place.id}}">
+                    <h1>{{place.Plc}}</h1> 
+                    </option> 
+                {% endfor %} 
             </select>
             <input type="submit" value="Add" name = "submit" >
         </form>
