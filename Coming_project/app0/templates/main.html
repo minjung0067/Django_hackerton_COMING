@@ -50,11 +50,9 @@
         <div class = "allshow page">
             {% for i in main_key.all %}
             <div class = "box">
-                <a href="#">
+                <a href="{% url 'detail' i.id %}">
                     <img style="width: 100px; height:100px;  " src="{{i.img.url}}" />
                     <p>이름 : {{i.name}}</p>
-                    <p>수량 : {{i.amount}}</p>
-                    <p>구매 날짜: {{i.date}}</p>
                     <p>유통 기한 : {{i.exp}}</p>
                     <p>보관 장소 :{{i.plc.Plc}}</p>     
                 </a>           
