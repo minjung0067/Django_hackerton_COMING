@@ -12,16 +12,21 @@ def main(request):
     Item = item.objects.all()
     return render(request,'main.html',{"main_key":Item})
 
+def detail(request,detail_id):
+    Item_detail = get_object_or_404(item, pk=detail_id)
+    return render(request,'detail.html',{"detail_key":Item_detail})
+
+
 def newitem(request):
     form = createForm()
     if request.method == "POST":
         new_val = item()
-        new_val.img = request.FILES['img']
-        new_val.name = request.POST['name']
-        new_val.amount = request.POST['amount']
-        new_val.date = request.POST['date']
-        new_val.exp = request.POST['exp']
-        new_val.plc = request.POST['plc']
+        new_val.img = request.FILES['Img']
+        new_val.name = request.POST['Name']
+        new_val.amount = request.POST['Amount']
+        new_val.date = request.POST['Date']
+        new_val.exp = request.POST['Exp']
+        new_val.plc = request.POST['Plc']
         new_val.save()
         return redirect(reverse('main'))
     else:
