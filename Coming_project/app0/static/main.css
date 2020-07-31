@@ -10,7 +10,7 @@
 
 /* 타이틀 아랫부분 전체 */
 .bottom{
-    height: 100%;
+    height: 80%;
     display: flex;
     flex-direction: row;
     margin: 4px;
@@ -70,12 +70,15 @@
 
 /* 새로운 카테고리 추가 버튼 */
 .newcategory{
+    background-color: aquamarine;
     text-align: center;
     font-size: 20px;
     position: fixed;
     left: 290px;
     bottom: 20px;
     cursor: pointer;
+    justify-content:flex-end;
+
 }
 
 
@@ -106,6 +109,7 @@
 .newitem{
     text-align: center;
 }
+<<<<<<< HEAD
 
 .footer{
     background-color: rgb(255, 255, 255);
@@ -137,4 +141,21 @@ li a.active {
 li a:hover:not(.active) {
     background-color: #555;
     color: white;
+=======
+/*아래 광고*/
+.later{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 4px;
+}
+.newcategory{
+    display:flex;
+    flex-direction:row;
+}
+.ad{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+>>>>>>> minji
 }

@@ -38,7 +38,7 @@
             
             
             <!--새로운 카테고리추가-->
-            
+           
         </div>
 <!-- 여기까지  템플릿 상속 -->
     {% endblock content %}
@@ -72,6 +72,18 @@
             <a href="https://likelion.net/">
                 <img src="../static/1.png" width="1300px" height="200px" align-items="center">
             </a>
+        </div>
+    </div>
+    <div class ="later">
+        <div class="newcategory">  
+            <a href="{% url 'newcate' %}">NEW<br>CATEGORY</a>
+        </div>
+        <div class="ad">
+            <div style="text-align:center;">
+                ` <a href="https://likelion.net/">
+                        <img src = "../static/1.png" width ="60%" height="150px" align-items="center">
+                    </a>
+            </div>
         </div>
     </div>
 </body>
