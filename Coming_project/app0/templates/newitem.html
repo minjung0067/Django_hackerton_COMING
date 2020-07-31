@@ -44,23 +44,23 @@
         
         <div class = "newitem page">
 <!-- 아직 모델이 없어서 위치 선정하기가 넘 애매하길래 일단은 그냥 세로로 보여지게 했어용 -->
-        <form action="#" enctype="multipart/form-data" method ="POST">
+        <form action="{% url 'newitem' %}" enctype="multipart/form-data" method ="POST">
             {% csrf_token %}
             <p> 사진</p>
             {{form.img}}
             <p> 이름 </p>
-            <input type="text" value="Name">
+            <textarea cols="30" rows="1"  name ="name"></textarea>
             <p> 수량  </p>
-            <input type="number" value="amount">
+            <textarea cols="30" rows="1"  name ="amount"></textarea>
             <!-- number타입은 길이 조절 불가 -->
             <p> 구매날짜  </p>
-            <input type="date" value="date">
+            <input type="date" name="date">
             <p> 유통기한 </p>
-            <input type="datetime-local" value="exp">
+            <input type="datetime-local" name="exp">
             <p> 보관장소 </p>
-            <select>
+            <select >
                 {% for place in placeobject %}
-                    <option value="{{place.id}}">
+                    <option value="{{place.id}}" name="where">
                     <h1>{{place.Plc}}</h1> 
                     </option> 
                 {% endfor %} 
