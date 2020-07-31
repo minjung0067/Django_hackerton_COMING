@@ -48,6 +48,8 @@ def newcate(request):
 def home(request):
     return render(request,'home.html')
 
+
+
 def loginhome(request):
     return render(request,'loginhome.html')
 
