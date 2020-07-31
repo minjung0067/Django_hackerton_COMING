@@ -1,6 +1,6 @@
 /* 페이지 타이틀 부분 */
 .title{   
-    background-color: yellowgreen;
+    background-color:rgba(115, 192, 255, 0.541);
     text-align: center;
     height: 110px;
     font-size:20px;
@@ -113,11 +113,15 @@
 
 .footer{
     background-color: rgb(255, 255, 255);
-    display:block;
-    margin:50px;
+    display:flex;
+    margin:20px;
     align-items:center;
     height:300px;
+    width:1400px;
 }
-
+.middle{
+    display:flex;
+    flex-direction: column;
+}
 
 
