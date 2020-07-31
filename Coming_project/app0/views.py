@@ -7,7 +7,6 @@ from .forms import createForm
 from django.contrib import auth
 import os
 
-
 def main(request):
     Item = item.objects.all()
     return render(request,'main.html',{"main_key":Item})
@@ -40,11 +39,7 @@ def newitem(request):
 def newcate(request):
     cate = category.objects
     return render(request, 'newcate.html',{'cate':cate})
-
-
-def newcate(request):
-    cate = category.objects
-    return render(request, 'newcate.html',{'cate':cate})
+    return render(request, 'main.html',{'category_key':Category})
 
 
 def home(request):
