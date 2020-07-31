@@ -7,8 +7,6 @@ from .forms import createForm
 from django.contrib import auth
 import os
 
-<<<<<<< HEAD
-=======
 def main(request):
     cate = category.objects
     Item = item.objects.all()
@@ -29,7 +27,6 @@ def cadetail(request,detail_id):
     '''
     return render(request, 'cadetail.html', {'category_loc':category_loc,'item_list':item_list})
 
->>>>>>> minji4
 def secondmain(request):
     Item = item.objects.all()
     return render(request,'secondmain.html',{"main_key":Item})
@@ -44,11 +41,8 @@ def detail(request,detail_id):
 
 def newitem(request):
     form = createForm()
-<<<<<<< HEAD
     placeobject = category.objects.all()
     
-=======
->>>>>>> minji4
     if request.method == "POST":
         new_val = item()
         new_val.img = request.FILES['img']
@@ -56,20 +50,8 @@ def newitem(request):
         new_val.amount = request.POST.get('amount',False)
         new_val.date = request.POST.get('date',False)
         new_val.exp = request.POST.get('exp',False)
-<<<<<<< HEAD
-<<<<<<< HEAD
         place_id = request.POST.get('where',None)
         new_val.plc = placeobject.get(id = place_id)
-=======
-        place_id = category.objects.get(item ='where')
-        new_val.plc = request.POST.get(place_id,False)
-        new_val.plc = request.POST.get('where',None)
->>>>>>> minji4
-=======
-        place_id = category.objects.get(item ='where')
-        new_val.plc = request.POST.get(place_id,False)
-        new_val.plc = request.POST.get('where',None)
->>>>>>> 95c7e8d56a384a6e82ce0a436e0b869b2991a58a
         new_val.save()
         return redirect(reverse('main'))
     else:

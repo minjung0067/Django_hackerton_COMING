@@ -4,6 +4,7 @@ from datetime import datetime
 class category(models.Model):
     objects = models.Manager()
     Plc = models.CharField(max_length=15,default="보관장소")
+
     
     
 
