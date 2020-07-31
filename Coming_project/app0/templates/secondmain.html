@@ -44,8 +44,7 @@
     <div class = middle>
         <!-- 모아보기 페이지 -->
         <!-- 다른 카테고리에서는 물건들은 달라도 보여지는 형식은 똑같이 -->
-        <div class = "firstshow page">
-            <img src ="../static/main.png" width="1000px">
+        <div class = "allshow page">
             
             {% for i in main_key.all %}
             <div class = "box">
@@ -53,29 +52,8 @@
                     <p>이름 : {{i.name}}</p>
                     <p>유통 기한 : {{i.exp}}</p>
                     <p>보관 장소 :{{i.plc.Plc}}</p>   
-                    
-                    <button id="myBtn">버튼</button>
-                    <div id="myModal" class="modal">
-                        <div class="modal-content">
-                            <span class="close"> &times; </span>
-                            <p>
-                                <img style="width: 100px; height:100px;  " src="{{i.img.url}}" />
-                                <p>이름 : {{i.name}}</p>
-                                <p>수량 : {{i.amount}}</p>
-                                <p>구매 날짜: {{i.date}}</p>
-                                <p>유통 기한 : {{i.exp}}</p>
-                                <p>보관 장소 :{{i.plc.Plc}}</p>   
-                                <a href="{% url 'newitem' %}">수정(임시)</a>
-                                <a>삭제</a>
-                            </p>
-                        </div>
-                    </div>
-
-
             </div>
             {% endfor %}
-
-
             <!--새로운 제품추가하는 버튼-->
             <div class="create">  
                 <a href="{% url 'newitem' %}">
@@ -91,34 +69,6 @@
         </div>
     </div>
     
-    <script>
-        // Get the modal
-        var modal = document.getElementById('myModal');
-        
-        // Get the button that opens the modal
-        var btn = document.getElementById("myBtn");
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];                                          
-
-        // When the user clicks on the button, open the modal 
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
-
-
+   
 </body>
 </html>
