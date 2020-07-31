@@ -47,6 +47,19 @@
         <div class = "firstshow page">
         
             
+            {% for i in main_key.all %}
+            <div class = "box">
+                    <img style="width: 100px; height:100px;  " src="{{i.img.url}}" />
+                    <p>이름 : {{i.name}}</p>
+                    <p>유통 기한 : {{i.exp}}</p>
+                    <p>보관 장소 :{{i.plc.Plc}}</p>   
+            </div>
+        </div>
+
+
+    </div>
+    {% endfor %}
+
 
             <img src = "../static/main.png" width ="1100px" align-items="center">
             <!--새로운 제품추가하는 버튼-->
@@ -71,33 +84,8 @@
             </div>
         </div>
     </div>
-    
-    <script>
-        // Get the modal
-        var modal = document.getElementById('myModal');
-        
-        // Get the button that opens the modal
-        var btn = document.getElementById("myBtn");
 
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];                                          
-
-        // When the user clicks on the button, open the modal 
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
+    <script type="text/javascript" src="../static/main.js">
     </script>
 
 
