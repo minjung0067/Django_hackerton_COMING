@@ -22,7 +22,7 @@
     flex-direction: column;
     height: 100%;
     width: 20%;
-    background-color: plum;
+   
     text-align: center;
     font-size: 20px;
     margin: 4px;
@@ -47,13 +47,14 @@
 /* 카테고리들 구분해주는 선 */
 .prof.line{
     height:20px;
-    background-color: white;
+  
 }
 
 /* 프로필에 있는 카테고리만  */
 .prof.category{
-    height:50px;
-    background-color: cornflowerblue;
+    height:500px;
+    background-color:#f1f1f1;
+
 }
 
 
@@ -106,3 +107,34 @@
     text-align: center;
 }
 
+.footer{
+    background-color: rgb(255, 255, 255);
+    display:block;
+    margin:50px;
+    align-items:center;
+    height:300px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+}
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 20px;
+    text-decoration: none;
+    width: 
+    
+}
+li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
