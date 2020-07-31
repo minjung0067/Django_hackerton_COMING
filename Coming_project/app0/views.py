@@ -29,7 +29,7 @@ def cadetail(request,detail_id):
 
 def secondmain(request):
     Item = item.objects.all()
-    return render(request,'secondmain.html',{"secondmain_key":Item})
+    return render(request,'secondmain.html',{"main_key":Item})
 
 def detail(request,detail_id):
     Item_detail = get_object_or_404(item, pk=detail_id)
@@ -53,7 +53,7 @@ def newitem(request):
         return redirect(reverse('main'))
     else:
         pass
-    return render(request, 'newitem.html',{'form':form})
+    return render(request, 'newitem.html',{'form':form ,'placeobject':placeobject})
 
 def newcate(request):
     cate = category.objects
