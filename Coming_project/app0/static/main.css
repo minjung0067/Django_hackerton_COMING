@@ -41,6 +41,7 @@
 .prof.photo{
     flex-direction: column;
     height:250px;
+    width : 500px;
     background-color: rosybrown;
 }
 
@@ -137,6 +138,7 @@ li a {
     padding: 8px 16px;
     text-decoration: none;
     width:350px;
+    align-items: center;
 }
 li a.active {
     background-color: #4CAF50;
@@ -152,8 +154,6 @@ li a:hover:not(.active) {
 }
 
 
-<<<<<<< HEAD
-=======
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -233,4 +233,3 @@ button:hover:before,button:hover:after{
   width:100%;
   transition:800ms ease all;
 }
->>>>>>> master
