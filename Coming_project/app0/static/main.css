@@ -208,6 +208,7 @@ button{
   cursor:pointer;
   transition:800ms ease all;
   outline:none;
+  font-family: "여기어때 잘난체 OTF";
 }
 button:hover{
   background:#fff;
