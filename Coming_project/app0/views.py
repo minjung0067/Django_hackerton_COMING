@@ -31,9 +31,6 @@ def secondmain(request):
     Item = item.objects.all()
     return render(request,'secondmain.html',{"main_key":Item})
 
-def main(request):
-    return render(request,'main.html')
-
 def detail(request,detail_id):
     Item_detail = get_object_or_404(item, pk=detail_id)
     return render(request,'detail.html',{"detail_key":Item_detail})

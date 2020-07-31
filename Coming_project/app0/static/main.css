@@ -152,8 +152,6 @@ li a:hover:not(.active) {
 }
 
 
-<<<<<<< HEAD
-=======
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -233,4 +231,3 @@ button:hover:before,button:hover:after{
   width:100%;
   transition:800ms ease all;
 }
->>>>>>> master
