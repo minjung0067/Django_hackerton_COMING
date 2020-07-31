@@ -28,7 +28,7 @@ def newitem(request):
         new_val.date = request.POST.get('date',False)
         new_val.exp = request.POST.get('exp',False)
         place_id = request.POST.get('where',False)
-        new_val.plc = placeobject.filter(id = place_id)
+        new_val.plc = category.objects.filter(id = place_id).values()
         new_val.save()
         return redirect(reverse('main'))
     else:
