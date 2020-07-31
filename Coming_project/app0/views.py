@@ -23,17 +23,17 @@ def detail(request,detail_id):
 def newitem(request):
     form = createForm()
     placeobject = category.objects.all()
-
-    if request.method == "POST":
+    
+ if request.method == "POST":
         new_val = item()
         new_val.img = request.FILES['img']
         new_val.name = request.POST.get('name',False)
         new_val.amount = request.POST.get('amount',False)
         new_val.date = request.POST.get('date',False)
         new_val.exp = request.POST.get('exp',False)
+        place = request.POST.get('where',None)
+        new_val.plc = placeobject.filter(id = '2')
         new_val.plc = request.POST.get('where',None)
-        place_id = category.objects.get(item ='where')
-        new_val.plc = request.POST.get(place_id,False)
         new_val.save()
         return redirect(reverse('main'))
     else:
