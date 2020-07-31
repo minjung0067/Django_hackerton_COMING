@@ -7,6 +7,29 @@ from .forms import createForm
 from django.contrib import auth
 import os
 
+<<<<<<< HEAD
+=======
+def main(request):
+    cate = category.objects
+    Item = item.objects.all()
+    return render(request,'main.html',{"main_key":Item,"category_key":cate})
+
+def cadetail(request,detail_id):
+    category_loc = get_object_or_404(category, pk=detail_id)
+    item_list = item.objects.filter(plc=detail_id)
+
+    '''
+    query = request.Get.get('query','')
+
+
+    if query == "냉장고":
+        itemPosts = itemPosts.filter(Q(category__icontains=query)).order_by('-time')
+    elif query == "창고":
+        Item_detail = Item_detail.filter(Q(category__icontains=query)).order_by('-time')
+    '''
+    return render(request, 'cadetail.html', {'category_loc':category_loc,'item_list':item_list})
+
+>>>>>>> minji4
 def secondmain(request):
     Item = item.objects.all()
     return render(request,'secondmain.html',{"main_key":Item})
@@ -21,8 +44,11 @@ def detail(request,detail_id):
 
 def newitem(request):
     form = createForm()
+<<<<<<< HEAD
     placeobject = category.objects.all()
     
+=======
+>>>>>>> minji4
     if request.method == "POST":
         new_val = item()
         new_val.img = request.FILES['img']
@@ -30,19 +56,23 @@ def newitem(request):
         new_val.amount = request.POST.get('amount',False)
         new_val.date = request.POST.get('date',False)
         new_val.exp = request.POST.get('exp',False)
+<<<<<<< HEAD
         place_id = request.POST.get('where',None)
         new_val.plc = placeobject.get(id = place_id)
+=======
+        place_id = category.objects.get(item ='where')
+        new_val.plc = request.POST.get(place_id,False)
+        new_val.plc = request.POST.get('where',None)
+>>>>>>> minji4
         new_val.save()
         return redirect(reverse('main'))
     else:
         pass
-    return render(request, 'newitem.html',{'form':form, 'placeobject':placeobject})
-
+    return render(request, 'newitem.html',{'form':form})
 
 def newcate(request):
     cate = category.objects
     return render(request, 'newcate.html',{'cate':cate})
-    return render(request, 'main.html',{'category_key':Category})
 
 
 def home(request):

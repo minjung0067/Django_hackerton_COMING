@@ -29,9 +29,9 @@
             <ul>
                     <li><a href="{% url 'secondmain' %}">모아보기</a></li>
                     <li><a href="{% url 'home' %}">Login page</a></li>
-                    {% for i in main_key.all %}
-                    <div class = "prof line">------------------------</div>
-                    <li>{{i.plc.Plc}}</li>
+                    {% for i in category_key.all %}
+                    <div class = "prof line" >--------------------------</div>
+                    <li><a href="{% url 'cadetail' i.id %}">{{i.Plc}}</a></li>
                     {% endfor %}  
                     <li><a href="{% url 'newcate' %}">NEW<br>CATEGORY</a></li> 
                 </ul>
