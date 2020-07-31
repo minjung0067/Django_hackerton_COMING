@@ -58,13 +58,13 @@
             <p> 유통기한 </p>
             <input type="datetime-local" name="exp">
             <p> 보관장소 </p>
-            <select >
-                {% for place in placeobject %}
-                    <option value="{{place.id}}" name="where">
-                    <h1>{{place.Plc}}</h1> 
-                    </option> 
-                {% endfor %} 
-            </select>
+                <select name="where">
+                    {% for place in placeobject %}
+                        <option value="{{place.id}}">
+                        <h1>{{place.Plc}}</h1> 
+                        </option> 
+                    {% endfor %} 
+                </select>
             <input type="submit" value="Add" name = "submit" >
         </form>
         </div>
