@@ -5,8 +5,7 @@ class category(models.Model):
     objects = models.Manager()
     Plc = models.CharField(max_length=15,default="보관장소")
     
-    def __str__(self):
-        return self.Plc
+    
 
 class item(models.Model):
     objects = models.Manager()

@@ -15,4 +15,5 @@ urlpatterns = [
     path('newitem/', views.newitem, name ='newitem'),
     path('newcate/',views.newcate, name = 'newcate'),
     path('detail/<int:detail_id>',views.detail, name='detail'),
+    path('cadetail/<int:detail_id>',views.cadetail, name='cadetail'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
