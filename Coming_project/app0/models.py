@@ -7,11 +7,9 @@ class category(models.Model):
 
 class item(models.Model):
     objects = models.Manager()
-<<<<<<< HEAD
-    img = models.ImageField(upload_to="image", blank=True)
-=======
+
     img = models.ImageField(upload_to="image", blank=True ,null=True)
->>>>>>> master
+
     name = models.CharField(max_length=15, default="이름")
     amount = models.IntegerField(default=1)
     date = models.DateTimeField(default=datetime.now, blank=True)
