@@ -11,7 +11,9 @@
     {% block title %}
     <!-- 타이틀부분 -->
     <div class="title"> 
-        <h1> <a href="{% url 'main' %}">coming</a> </h1>
+        <h1> <a href="{% url 'main' %}">
+            <img src = "../static/eye.png " width ="400px">
+        </a> </h1>
     </div>
     {% endblock title %}
 
@@ -19,30 +21,22 @@
     <div class="bottom">  
         <!-- 프로필 -->
         <div class = "profile">
-            <div class = "prof photo"><img src="../static/zz.jpg" id="mypic"></div>  
-            
+            <div class = "prof photo"><img src="../static/zz.jpg" id="mypic"></div>  <!-- 사진보여지는부분 -->
             <!-- 메뉴 -->
-            <div class = "prof line">------------------------</div>
-            <div class = "prof category">
-                <a>모아보기</a>
-            </div>
-            <div class = "prof line">------------------------</div>
-            <div class = "prof category">
-                <a>냉장보관</a>
-            </div>
-            <div class = "prof category">냉동보관</div>
-            <div class = "prof category">상온보관</div>
-            <div class = "prof line">------------------------</div>
-            <div class = "prof category">파우치</div>
-            <div class = "prof category">약통</div>
-            <div class = "prof line">------------------------</div>
-            <div class = "prof category">요기</div>
-            <div class = "prof category">조기</div>
             
-            <!--새로운 제품추가-->
-            <div class="newcategory">      
-            <a>NEW<br>CATEGORY</a>
+                
+            <div class ="prof category">
+            <ul>
+                    <li><a href="{% url 'home' %}">Login page</a></li>
+                    {% for i in main_key.all %}
+                    <div class = "prof line">------------------------</div>
+                    <li>{{i.plc.Plc}}</li>
+                    {% endfor %}  
+                    <li><a href="{% url 'newcate' %}">NEW<br>CATEGORY</a></li> 
+                </ul>
+                
             </div>
+            
         </div>
 <!-- 여기까지  템플릿 상속 -->
         {% endblock content %}
@@ -50,22 +44,26 @@
         
         <div class = "newitem page">
 <!-- 아직 모델이 없어서 위치 선정하기가 넘 애매하길래 일단은 그냥 세로로 보여지게 했어용 -->
-        <form action="#" enctype="multipart/form-data" method ="POST">
+        <form action="{% url 'newitem' %}" enctype="multipart/form-data" method ="POST">
             {% csrf_token %}
             <p> 사진</p>
             {{form.img}}
             <p> 이름 </p>
-            <input type="text" value="Name">
+            <textarea cols="30" rows="1"  name ="name"></textarea>
             <p> 수량  </p>
-            <input type="number" value="Amount">
+            <textarea cols="30" rows="1"  name ="amount"></textarea>
             <!-- number타입은 길이 조절 불가 -->
             <p> 구매날짜  </p>
-            <input type="date" value="Date">
+            <input type="date" name="date">
             <p> 유통기한 </p>
-            <input type="datetime-local" value="Exp">
+            <input type="datetime-local" name="exp">
             <p> 보관장소 </p>
-            <select>
-                <option value=1> 데이터 불러야댐 </option> 
+            <select >
+                {% for place in placeobject %}
+                    <option value="{{place.id}}" name="where">
+                    <h1>{{place.Plc}}</h1> 
+                    </option> 
+                {% endfor %} 
             </select>
             <input type="submit" value="Add" name = "submit" >
         </form>

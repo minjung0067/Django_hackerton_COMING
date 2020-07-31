@@ -7,10 +7,13 @@ from .forms import createForm
 from django.contrib import auth
 import os
 
-
 def main(request):
     Item = item.objects.all()
     return render(request,'main.html',{"main_key":Item})
+
+def secondmain(request):
+    Item = item.objects.all()
+    return render(request,'secondmain.html',{"main_key":Item})
 
 def detail(request,detail_id):
     Item_detail = get_object_or_404(item, pk=detail_id)
@@ -19,6 +22,8 @@ def detail(request,detail_id):
 
 def newitem(request):
     form = createForm()
+    placeobject = category.objects.all()
+
     if request.method == "POST":
         new_val = item()
         new_val.img = request.FILES['img']
@@ -33,15 +38,19 @@ def newitem(request):
         return redirect(reverse('main'))
     else:
         pass
-    return render(request, 'newitem.html',{'form':form})
+    return render(request, 'newitem.html',{'form':form, 'placeobject':placeobject})
+
 
 def newcate(request):
     cate = category.objects
     return render(request, 'newcate.html',{'cate':cate})
+    return render(request, 'main.html',{'category_key':Category})
 
 
 def home(request):
     return render(request,'home.html')
+
+
 
 def loginhome(request):
     return render(request,'loginhome.html')
@@ -75,5 +84,3 @@ def signup(request):
 def logout(request):
     auth.logout(request)
     return redirect('home')
-
-
