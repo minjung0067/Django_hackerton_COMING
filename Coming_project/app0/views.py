@@ -11,6 +11,10 @@ def main(request):
     Item = item.objects.all()
     return render(request,'main.html',{"main_key":Item})
 
+def secondmain(request):
+    Item = item.objects.all()
+    return render(request,'secondmain.html',{"main_key":Item})
+
 def detail(request,detail_id):
     Item_detail = get_object_or_404(item, pk=detail_id)
     return render(request,'detail.html',{"detail_key":Item_detail})
@@ -19,16 +23,15 @@ def detail(request,detail_id):
 def newitem(request):
     form = createForm()
     placeobject = category.objects.all()
-    
+
     if request.method == "POST":
         new_val = item()
         new_val.img = request.FILES['img']
-        new_val.name = request.POST.get('name',False)
-        new_val.amount = request.POST.get('amount',False)
-        new_val.date = request.POST.get('date',False)
-        new_val.exp = request.POST.get('exp',False)
-        place_id = request.POST.get('where',False)
-        new_val.plc = placeobject.filter(id = place_id)
+        new_val.name = request.POST['Name']
+        new_val.amount = request.POST['Amount']
+        new_val.date = request.POST['Date']
+        new_val.exp = request.POST['Exp']
+        new_val.plc = request.POST['Plc']
         new_val.save()
         return redirect(reverse('main'))
     else:
@@ -44,6 +47,8 @@ def newcate(request):
 
 def home(request):
     return render(request,'home.html')
+
+
 
 def loginhome(request):
     return render(request,'loginhome.html')
