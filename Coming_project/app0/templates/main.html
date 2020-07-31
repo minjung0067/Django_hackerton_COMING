@@ -22,10 +22,9 @@
             <div class = "prof photo"><img src="../static/zz.jpg" id="mypic"></div>  <!-- 사진보여지는부분 -->
             <!-- 메뉴 -->
             
-           
                 
             <div class ="prof category">
-               <ul>
+            <ul>
                     <li><a href="{% url 'home' %}">Login page</a></li>
                     {% for i in main_key.all %}
                     <div class = "prof line">------------------------</div>
@@ -36,9 +35,6 @@
                 
             </div>
             
-            
-            <!--새로운 카테고리추가-->
-           
         </div>
 <!-- 여기까지  템플릿 상속 -->
     {% endblock content %}
@@ -52,25 +48,7 @@
                     <img style="width: 100px; height:100px;  " src="{{i.img.url}}" />
                     <p>이름 : {{i.name}}</p>
                     <p>유통 기한 : {{i.exp}}</p>
-                    <p>보관 장소 :{{i.plc.Plc}}</p>  
-
-                    <button id="myBtn">
-                    상세보기
-                    </button>
-                    
-                    <div id="myModal" class="modal">
-                        <div class="modal-content">
-                            <span class="close">&times;</span>
-                            <p>
-                                <img style="width: 100px; height:100px;  " src="{{i.img.url}}" />
-                                    <p>이름 : {{i.name}}</p>
-                                    <p>수량 : {{i.amount}}</p>
-                                    <p>구매 날짜: {{i.date}}</p>
-                                    <p>유통 기한 : {{i.exp}}</p>
-                                    <p>보관 장소 :{{i.plc.Plc}}</p>    
-                            </p>
-                        </div>
-                    </div>
+                    <p>보관 장소 :{{i.plc.Plc}}</p>   
             </div>
             
             {% endfor %}
@@ -83,7 +61,6 @@
             
     
         </div>
-       
     </div>
     <div class="footer">
         <div class = "stylef">
@@ -92,47 +69,7 @@
             </a>
         </div>
     </div>
-    <div class ="later">
-        <div class="newcategory">  
-            <a href="{% url 'newcate' %}">NEW<br>CATEGORY</a>
-        </div>
-        <div class="ad">
-            <div style="text-align:center;">
-                ` <a href="https://likelion.net/">
-                        <img src = "../static/1.png" width ="60%" height="150px" align-items="center">
-                    </a>
-            </div>
-        </div>
-    </div>
 
-
-
-    <script>
-        // Get the modal
-        var modal = document.getElementById("myModal");
-
-        // Get the button that opens the modal
-        var btn = document.getElementById("myBtn");
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];                                          
-
-        // When the user clicks on the button, open the modal 
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
 
 </body>
 </html>
