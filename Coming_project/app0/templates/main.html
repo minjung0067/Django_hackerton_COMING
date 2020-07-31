@@ -22,10 +22,9 @@
             <div class = "prof photo"><img src="../static/zz.jpg" id="mypic"></div>  <!-- 사진보여지는부분 -->
             <!-- 메뉴 -->
             
-           
                 
             <div class ="prof category">
-               <ul>
+            <ul>
                     <li><a href="{% url 'home' %}">Login page</a></li>
                     {% for i in main_key.all %}
                     <div class = "prof line">------------------------</div>
@@ -36,9 +35,6 @@
                 
             </div>
             
-            
-            <!--새로운 카테고리추가-->
-           
         </div>
 <!-- 여기까지  템플릿 상속 -->
     {% endblock content %}
@@ -46,15 +42,15 @@
         <!-- 모아보기 페이지 -->
         <!-- 다른 카테고리에서는 물건들은 달라도 보여지는 형식은 똑같이 -->
         <div class = "allshow page">
+            
             {% for i in main_key.all %}
             <div class = "box">
-                <a href="{% url 'detail' i.id %}">
                     <img style="width: 100px; height:100px;  " src="{{i.img.url}}" />
                     <p>이름 : {{i.name}}</p>
                     <p>유통 기한 : {{i.exp}}</p>
-                    <p>보관 장소 :{{i.plc.Plc}}</p>     
-                </a>           
+                    <p>보관 장소 :{{i.plc.Plc}}</p>   
             </div>
+            
             {% endfor %}
 
             <!--새로운 제품추가하는 버튼-->
@@ -65,7 +61,6 @@
             
     
         </div>
-       
     </div>
     <div class="footer">
         <div class = "stylef">
@@ -74,17 +69,7 @@
             </a>
         </div>
     </div>
-    <div class ="later">
-        <div class="newcategory">  
-            <a href="{% url 'newcate' %}">NEW<br>CATEGORY</a>
-        </div>
-        <div class="ad">
-            <div style="text-align:center;">
-                ` <a href="https://likelion.net/">
-                        <img src = "../static/1.png" width ="60%" height="150px" align-items="center">
-                    </a>
-            </div>
-        </div>
-    </div>
+
+
 </body>
 </html>

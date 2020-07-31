@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-        <img style="width: 100px; height:100px;  " src="{{i.img.url}}" />
+        <img style="width: 100px; height:100px;  " src="{{detail_key.img.url}}" />
         <p>이름 : {{detail_key.name}}</p>
         <p>수량 : {{detail_key.amount}}</p>
         <p>구매 날짜: {{detail_key.date}}</p>
