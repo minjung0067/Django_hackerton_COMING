@@ -40,20 +40,27 @@
 /* 프로필 속 사진 전체 감싸는 div */
 .prof.photo{
     flex-direction: column;
-    height:250px;
+    height:350px;
+    width : 500px;
     background-color: rosybrown;
+    font-family: "여기어때 잘난체 OTF";
+    align-items: center;
+    
 }
 
 /* 카테고리들 구분해주는 선 */
 .prof.line{
     height:20px;
-  
+    text-align: center;
+    align-items: center;
 }
 
 /* 프로필에 있는 카테고리만  */
 .prof.category{
     height:500px;
     background-color:#f1f1f1;
+    text-align: center;
+    align-items: center;
 
 }
 
@@ -101,8 +108,11 @@
 .box{
     height: 250px;
     width: 400px;
-    background-color: darkkhaki;
+    background-color: rgb(6, 91, 165);
     margin: 40px;
+    color:white;
+    text-align: center;
+    
 }
 
 
@@ -130,6 +140,7 @@ ul {
     width: 200px;
     background-color: #f1f1f1;
     text-align:center;
+    font-family:"여기어때 잘난체 OTF"
 }
 li a {
     display: block;
@@ -137,6 +148,7 @@ li a {
     padding: 8px 16px;
     text-decoration: none;
     width:350px;
+    align-items: center;
 }
 li a.active {
     background-color: #4CAF50;
@@ -152,8 +164,6 @@ li a:hover:not(.active) {
 }
 
 
-<<<<<<< HEAD
-=======
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -208,6 +218,7 @@ button{
   cursor:pointer;
   transition:800ms ease all;
   outline:none;
+  font-family: "여기어때 잘난체 OTF";
 }
 button:hover{
   background:#fff;
@@ -220,7 +231,7 @@ button:before,button:after{
   right:0;
   height:2px;
   width:0;
-  background: #1AAB8A;
+  background: #1b789c;
   transition:400ms ease all;
 }
 button:after{
@@ -233,4 +244,3 @@ button:hover:before,button:hover:after{
   width:100%;
   transition:800ms ease all;
 }
->>>>>>> master

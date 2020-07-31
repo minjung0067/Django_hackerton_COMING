@@ -31,9 +31,6 @@ def secondmain(request):
     Item = item.objects.all()
     return render(request,'secondmain.html',{"main_key":Item})
 
-def main(request):
-    return render(request,'main.html')
-
 def detail(request,detail_id):
     Item_detail = get_object_or_404(item, pk=detail_id)
     return render(request,'detail.html',{"detail_key":Item_detail})
@@ -56,11 +53,17 @@ def newitem(request):
         return redirect(reverse('main'))
     else:
         pass
-    return render(request, 'newitem.html',{'form':form})
+    return render(request, 'newitem.html',{'form':form ,'placeobject':placeobject})
 
 def newcate(request):
-    cate = category.objects
-    return render(request, 'newcate.html',{'cate':cate})
+    if request.method == "POST":
+        new_cate = category()
+        new_cate.Plc = request.POST.get('plc',False)
+        new_cate.save()
+        return redirect(reverse('main'))
+    else:
+        pass 
+    return render(request, 'newcate.html')
 
 
 def home(request):
