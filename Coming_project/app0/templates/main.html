@@ -26,7 +26,7 @@
             
                 
             <div class ="prof category">
-            <ul>
+                <ul>
                     <li><a href="{% url 'secondmain' %}">모아보기</a></li>
                     <li><a href="{% url 'home' %}">Login page</a></li>
                     {% for i in category_key.all %}
@@ -34,44 +34,40 @@
                     <li><a href="{% url 'cadetail' i.id %}">{{i.Plc}}</a></li>
                     {% endfor %}  
                     <li><a href="{% url 'newcate' %}">NEW<br>CATEGORY</a></li> 
-                </ul>
-                
+                </ul> 
             </div>
             
         </div>
 <!-- 여기까지  템플릿 상속 -->
-    {% endblock content %}
-    <div class = middle>
-        <!-- 모아보기 페이지 -->
-        <!-- 다른 카테고리에서는 물건들은 달라도 보여지는 형식은 똑같이 -->
-        <div class = "firstshow page">
-            <img src = "../static/main.png" width ="1100px" align-items="center">
-                <!--새로운 제품추가하는 버튼-->
-                <div class=" create">  
-                    <button>
-                        <a href="{% url 'newitem' %}">
-                            NEW ITEM</a>
-                    </button>
-                </div>
-                <div class=" create">  
-                    <button>
-                    <a href="{% url 'secondmain' %}">
-                    모아보기</a>
-                    </button>
-                </div>
-                <div class="footer">
-                    <div class = "stylef">
-                        <a href="https://likelion.net/">
-                            <img src="../static/1.png" width="1100px" height="200px" align-items="center">
-                        </a>
+        {% endblock content %}
+        <div class = middle>
+            <!-- 모아보기 페이지 -->
+            <!-- 다른 카테고리에서는 물건들은 달라도 보여지는 형식은 똑같이 -->
+            <div class = "firstshow page">
+                <img src = "../static/main.png" width ="1100px" align-items="center">
+                    <!--새로운 제품추가하는 버튼-->
+                    <div class=" create">  
+                        <button>
+                            <a href="{% url 'newitem' %}">
+                                NEW ITEM</a>
+                        </button>
                     </div>
-                </div>
- 
-        
+                    <div class=" create">  
+                        <button>
+                        <a href="{% url 'secondmain' %}">
+                        모아보기</a>
+                        </button>
+                    </div>
+                    <div class="footer">
+                        <div class = "stylef">
+                            <a href="https://likelion.net/">
+                                <img src="../static/1.png" width="1100px" height="200px" align-items="center">
+                            </a>
+                        </div>
+                    </div>
+
+            </div>
         </div>
-
-
-    </div>
 
 
             
