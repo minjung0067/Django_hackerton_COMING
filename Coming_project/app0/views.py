@@ -57,6 +57,7 @@ def newitem(request):
         new_val.date = request.POST.get('date',False)
         new_val.exp = request.POST.get('exp',False)
 <<<<<<< HEAD
+<<<<<<< HEAD
         place_id = request.POST.get('where',None)
         new_val.plc = placeobject.get(id = place_id)
 =======
@@ -64,6 +65,11 @@ def newitem(request):
         new_val.plc = request.POST.get(place_id,False)
         new_val.plc = request.POST.get('where',None)
 >>>>>>> minji4
+=======
+        place_id = category.objects.get(item ='where')
+        new_val.plc = request.POST.get(place_id,False)
+        new_val.plc = request.POST.get('where',None)
+>>>>>>> 95c7e8d56a384a6e82ce0a436e0b869b2991a58a
         new_val.save()
         return redirect(reverse('main'))
     else:
