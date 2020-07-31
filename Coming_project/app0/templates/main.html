@@ -21,7 +21,7 @@
     <div class="bottom">  
         <!-- 프로필 -->
         <div class = "profile">
-            <div class = "prof photo"><img src="../static/zz.jpg" id="mypic"></div>  <!-- 사진보여지는부분 -->
+            <div class = "prof photo" ><img src="../static/zz.jpg" id="mypic"> <br>두둥이님 안녕하세요.</div>  <!-- 사진보여지는부분 -->
             <!-- 메뉴 -->
             
                 
@@ -30,7 +30,7 @@
                     <li><a href="{% url 'secondmain' %}">모아보기</a></li>
                     <li><a href="{% url 'home' %}">Login page</a></li>
                     {% for i in category_key.all %}
-                    <div class = "prof line" >--------------------------</div>
+                    <div class = "prof line" ></div>
                     <li><a href="{% url 'cadetail' i.id %}">{{i.Plc}}</a></li>
                     {% endfor %}  
                     <li><a href="{% url 'newcate' %}">NEW<br>CATEGORY</a></li> 

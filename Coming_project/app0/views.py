@@ -63,7 +63,7 @@ def newcate(request):
         return redirect(reverse('main'))
     else:
         pass 
-    return render(request, 'newcate.html',{'cate':cate })
+    return render(request, 'newcate.html')
 
 
 def home(request):
