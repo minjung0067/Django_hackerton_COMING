@@ -29,7 +29,7 @@ def cadetail(request,detail_id):
 
 def secondmain(request):
     Item = item.objects.all()
-    return render(request,'secondmain.html',{"main_key":Item})
+    return render(request,'secondmain.html',{"secondmain_key":Item})
 
 def detail(request,detail_id):
     Item_detail = get_object_or_404(item, pk=detail_id)
