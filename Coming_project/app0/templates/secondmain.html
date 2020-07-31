@@ -27,6 +27,7 @@
                 
             <div class ="prof category">
             <ul>
+                    <li><a href="{% url 'secondmain' %}">모아보기</a></li>
                     <li><a href="{% url 'home' %}">Login page</a></li>
                     {% for i in main_key.all %}
                     <div class = "prof line">------------------------</div>
@@ -39,35 +40,35 @@
             
         </div>
 <!-- 여기까지  템플릿 상속 -->
-        {% endblock content %}
-        
-        
-        <div class = "newitem page">
-<!-- 아직 모델이 없어서 위치 선정하기가 넘 애매하길래 일단은 그냥 세로로 보여지게 했어용 -->
-        <form action="#" enctype="multipart/form-data" method ="POST">
-            {% csrf_token %}
-            <p> 사진</p>
-            {{form.img}}
-            <p> 이름 </p>
-            <input type="text" value="Name">
-            <p> 수량  </p>
-            <input type="number" value="amount">
-            <!-- number타입은 길이 조절 불가 -->
-            <p> 구매날짜  </p>
-            <input type="date" value="date">
-            <p> 유통기한 </p>
-            <input type="datetime-local" value="exp">
-            <p> 보관장소 </p>
-            <select>
-                {% for place in placeobject %}
-                    <option value="{{place.id}}">
-                    <h1>{{place.Plc}}</h1> 
-                    </option> 
-                {% endfor %} 
-            </select>
-            <input type="submit" value="Add" name = "submit" >
-        </form>
+    {% endblock content %}
+    <div class = middle>
+        <!-- 모아보기 페이지 -->
+        <!-- 다른 카테고리에서는 물건들은 달라도 보여지는 형식은 똑같이 -->
+        <div class = "allshow page">
+            
+            {% for i in main_key.all %}
+            <div class = "box">
+                    <img style="width: 100px; height:100px;  " src="{{i.img.url}}" />
+                    <p>이름 : {{i.name}}</p>
+                    <p>유통 기한 : {{i.exp}}</p>
+                    <p>보관 장소 :{{i.plc.Plc}}</p>   
+            </div>
+            {% endfor %}
+            <!--새로운 제품추가하는 버튼-->
+            <div class="create">  
+                <a href="{% url 'newitem' %}">
+                    NEW<br>ITEM</a>
+            </div>
+        </div>
+        <div class="footer">
+            <div class = "stylef">
+                <a href="https://likelion.net/">
+                    <img src="../static/1.png" width="1100px" height="200px" align-items="center">
+                </a>
+            </div>
         </div>
     </div>
+    
+   
 </body>
 </html>
