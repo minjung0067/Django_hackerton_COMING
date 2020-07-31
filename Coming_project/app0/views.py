@@ -56,8 +56,14 @@ def newitem(request):
     return render(request, 'newitem.html',{'form':form ,'placeobject':placeobject})
 
 def newcate(request):
-    cate = category.objects
-    return render(request, 'newcate.html',{'cate':cate})
+    if request.method == "POST":
+        new_cate = category()
+        new_cate.Plc = request.POST.get('plc',False)
+        new_cate.save()
+        return redirect(reverse('main'))
+    else:
+        pass 
+    return render(request, 'newcate.html',{'cate':cate })
 
 
 def home(request):
