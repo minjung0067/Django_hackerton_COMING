@@ -244,3 +244,10 @@ button:hover:before,button:hover:after{
   width:100%;
   transition:800ms ease all;
 }
+
+.aboutus{
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+}
