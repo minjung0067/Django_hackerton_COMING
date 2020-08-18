@@ -199,6 +199,7 @@ button:hover:before,button:hover:after{
 .aboutus{
     height: 100%;
     width: 100%;
+    font-family: "여기어때 잘난체 OTF";
     align-items: center;
     text-align: center;
 }

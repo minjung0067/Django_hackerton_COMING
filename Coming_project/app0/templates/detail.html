@@ -4,21 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>상세정보</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
 
-    <title>상세보기</title>
-
-    <title>상세정보</title>
-    
 
 </head>
 <body>
-        <img style="width: 100px; height:100px;  " src="{{detail_key.img.url}}" />
-        <p>이름 : {{detail_key.name}}</p>
-        <p>수량 : {{detail_key.amount}}</p>
-        <p>구매 날짜: {{detail_key.date|date:"D d M Y"}}</p>
-        <p>유통 기한 : {{detail_key.exp|date:"D d M Y"}}</p>
-        <p>보관 장소 :{{detail_key.plc.Plc}}</p>     
+    {% block title %}
+    <!-- 타이틀부분 -->
+    <div class="title"> 
+        <h1> <a href="{% url 'main' %}">
+            <img src = "../static/eye.png " width ="400px">
+        </a> </h1>
+    </div>
+    {% endblock title %}
+    <div class="aboutus" >
+        <h1>이름 : {{detail_key.name}}</h1>
+        <h1>수량 : {{detail_key.amount}}</h1>
+        <h1>구매 날짜: {{detail_key.date|date:"D d M Y"}}</h1>
+        <h1>유통 기한 : {{detail_key.exp|date:"D d M Y"}}</h1>
+        <h1>보관 장소 :{{detail_key.plc.Plc}}</h1>     
+    </div> 
 </body>
 </html>
