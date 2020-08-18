@@ -11,8 +11,8 @@
         <img style="width: 100px; height:100px;  " src="{{detail_key.img.url}}" />
         <p>이름 : {{detail_key.name}}</p>
         <p>수량 : {{detail_key.amount}}</p>
-        <p>구매 날짜: {{detail_key.date}}</p>
-        <p>유통 기한 : {{detail_key.exp}}</p>
+        <p>구매 날짜: {{detail_key.date|date:"D d M Y"}}</p>
+        <p>유통 기한 : {{detail_key.exp|date:"D d M Y"}}</p>
         <p>보관 장소 :{{detail_key.plc.Plc}}</p>     
 </body>
 </html>
