@@ -1,10 +1,14 @@
+html{
+    width: 100%;
+    height: 100%;
+}
+
 /* 페이지 타이틀 부분 */
 .title{   
     background-color:rgba(115, 192, 255, 0.541);
     text-align: center;
     height: 110px;
     font-size:20px;
-    width: 100%;
     margin: 4px;
 }
 
@@ -20,9 +24,8 @@
 .profile{
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: auto;
     width: 20%;
-   
     text-align: center;
     font-size: 20px;
     margin: 4px;
@@ -32,7 +35,6 @@
 #mypic{
     border-radius: 100%;
     height: 200px;
-    width: 200px;
     text-align: center;
     margin: 4px;
 }
@@ -40,27 +42,22 @@
 /* 프로필 속 사진 전체 감싸는 div */
 .prof.photo{
     flex-direction: column;
-    height:350px;
-    width : 500px;
+    height: 350px;
     background-color: rosybrown;
     font-family: "여기어때 잘난체 OTF";
-    align-items: center;
     
 }
 
 /* 카테고리들 구분해주는 선 */
 .prof.line{
     height:20px;
-    text-align: center;
-    align-items: center;
 }
 
 /* 프로필에 있는 카테고리만  */
 .prof.category{
     height:500px;
     background-color:#f1f1f1;
-    text-align: center;
-    align-items: center;
+    text-align: start;
 
 }
 
@@ -77,7 +74,6 @@
 /* 새로운 카테고리 추가 버튼 */
 .newcategory{
     background-color: aquamarine;
-    text-align: center;
     font-size: 20px;
     position: fixed;
     left: 290px;
@@ -126,8 +122,7 @@
     display:flex;
     margin:20px;
     align-items:center;
-    height:300px;
-    width:1400px;
+    width: 70%;
 }
 .middle{
     display:flex;
@@ -137,8 +132,6 @@ ul {
     list-style-type: none;
     margin: 10px;
     padding: 0;
-    width: 200px;
-    background-color: #f1f1f1;
     text-align:center;
     font-family:"여기어때 잘난체 OTF"
 }
@@ -147,7 +140,6 @@ li a {
     color: #000;
     padding: 8px 16px;
     text-decoration: none;
-    width:350px;
     align-items: center;
 }
 li a.active {
@@ -161,52 +153,15 @@ li a:hover:not(.active) {
 .firstshow{
     display:flex;
     flex-direction: column;
+    width: auto;
+    align-items: center;
 }
 
 
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-/* Modal Content/Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%; /* Could be more or less, depending on screen size */
-}
-/* The Close Button */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-    
-}
-.firstshow{
-    display:flex;
-    flex-direction: column;
-    margin:0;
-}
+<<<<<<< HEAD
+=======
 
-
-/*버튼*/
+>>>>>>> ina
 button{
   background:#1AAB8A;
   color:#fff;
