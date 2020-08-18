@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coming ٩(๑•̀o•́๑)و </title>
     <link rel="stylesheet" href="{% static 'main.css' %}">
+    <style>
+        body {
+            font-family: "여기어때 잘난체 OTF";
+        }
+    </style>
 </head>
 <body>
     {% block title %}
@@ -47,10 +52,14 @@
                     <p>이름 : {{i.name}}</p>
                     <p>유통 기한 : {{i.exp}}</p>
                     <p>보관 장소 :{{i.plc.Plc}}</p>   
+<<<<<<< HEAD
                     <button id="myBtn"><a href="{% url 'detail' i.id %}">자세히</a></button>
                     
 
 
+=======
+                    <button id="myBtn" style="margin: 60px 60px;"><a href="{% url 'detail' i.id %}">자세히</a></button>    
+>>>>>>> e1518234818648e709b69c565482dea52e29e55b
             </div>
             {% endfor %}
 
