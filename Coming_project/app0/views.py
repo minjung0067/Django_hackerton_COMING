@@ -103,3 +103,6 @@ def signup(request):
 def logout(request):
     auth.logout(request)
     return redirect('home')
+
+def aboutus(request):
+    return render(request, 'aboutus.html')

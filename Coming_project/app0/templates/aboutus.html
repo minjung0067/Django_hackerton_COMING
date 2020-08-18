@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming ٩(๑•̀o•́๑)و </title>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+    {% block title %}
+    <!-- 타이틀부분 -->
+    <div class="title"> 
+        <h1> <a href="{% url 'main' %}">
+            <img src = "../static/eye.png " width ="400px">
+        </a> </h1>
+    </div>
+    {% endblock title %}
+</body>
+</html>

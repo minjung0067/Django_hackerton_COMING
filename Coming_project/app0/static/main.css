@@ -99,7 +99,7 @@
 
 /* 모두보기 페이지 */
 .allshow.page{
-    display: flex;
+
     flex-direction: row;
     vertical-align:middle;
 }

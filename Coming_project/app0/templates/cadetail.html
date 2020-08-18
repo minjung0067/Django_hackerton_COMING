@@ -50,7 +50,7 @@
             <div class = "box">
                     
                     <p>이름 : {{i.name}}</p>
-                    <p>유통 기한 : {{i.exp}}</p>
+                    <p>{{i.exp|date:"D d M Y"}} 까지</p>
                     <p>보관 장소 :{{i.plc.Plc}}</p>   
                     
                     <button id="myBtn" font-family="여기어때 잘난체 OTF"><a href="{% url 'detail' i.id %}">자세히</a></button>
